@@ -9,20 +9,20 @@
 # print(x)
 # print(response)
 
-# 🚨 Don't change the code below 👇
+#
 # a = input("a: ")
 # b = input("b: ")
-# 🚨 Don't change the code above 👆
+# 
 
 ####################################
-#Write your code below this line 👇
+#Write your code below this line 
 # c = b
 # b = a
 # a = c
-#Write your code above this line 👆
+#Write your code above this line 
 ####################################
 
-# 🚨 Don't change the code below 👇
+#  Don't change the code below 
 # print("a: " + a)
 # print("b: " + b)
 # print("Welcome to the average band name generator!!")
@@ -35,11 +35,11 @@
 # type( str(len( "Hello")))
 
 # two_digit_number = input("Type a two digit number: ")
-# # 🚨 Don't change the code above 👆
+# #  Don't change the code above 
 
 # ####################################
-# #Write your code below this line 👇
-# num1 = (int(two_digit_number[0]))
+# #Write your code below this line 
+# num1 = (int(two_digit_number[0])
 # num2 = (int(two_digit_number[1]))
 # num3 = (int(two_digit_number[0])) + (int(two_digit_number[1]))
 # # print((str(num1)) + " + " + (str(num2)) + " = " + (str(num3)))
@@ -145,3 +145,7 @@
 #  and (not &&)
 #  or (not ||)
 #  not (not !)
+
+while "a" in ["a", "b"]:
+    print("yes")
+    break

@@ -27,4 +27,3 @@ for i in range(nr_numbers):
 p = random.sample(password, k=len(password))
 print("".join(p))
 
-# A
