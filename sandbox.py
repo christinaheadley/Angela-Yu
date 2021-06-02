@@ -148,35 +148,88 @@
 
 #Step 3
 
-import random
-word_list = ["aardvark", "baboon", "camel"]
-chosen_word = random.choice(word_list)
-word_length = len(chosen_word)
+# import random
+# word_list = ["aardvark", "baboon", "camel"]
+# chosen_word = random.choice(word_list)
+# word_length = len(chosen_word)
 
-#Testing code
-print(f'Pssst, the solution is {chosen_word}.')
+# #Testing code
+# print(f'Pssst, the solution is {chosen_word}.')
 
-#Create blanks
-display = []
-for _ in range(word_length):
-    display += "_"
+# #Create blanks
+# display = []
+# for _ in range(word_length):
+#     display += "_"
 
-#TODO-1: - Use a while loop to let the user guess again. The loop should only stop once the user has guessed all the letters in the chosen_word and 'display' has no more blanks ("_"). Then you can tell the user they've won.
-end_of_game = False
+# #TODO-1: - Use a while loop to let the user guess again. The loop should only stop once the user has guessed all the letters in the chosen_word and 'display' has no more blanks ("_"). Then you can tell the user they've won.
+# end_of_game = False
 
-while not end_of_game:
-    guess = input("Guess a letter: ").lower()
+# while not end_of_game:
+#     guess = input("Guess a letter: ").lower()
 
-    #Check guessed letter
-    for position in range(word_length):
-        letter = chosen_word[position]
-        #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
-        if letter == guess:
-            display[position] = letter
+#     #Check guessed letter
+#     for position in range(word_length):
+#         letter = chosen_word[position]
+#         #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+#         if letter == guess:
+#             display[position] = letter
 
-    print(display)
+#     print(display)
 
-    #Check if there are no more "_" left in 'display'. Then all letters have been guessed.
-    if "_" not in display:
-        end_of_game = True
-        print("You win.")
+#     #Check if there are no more "_" left in 'display'. Then all letters have been guessed.
+#     if "_" not in display:
+#         end_of_game = True
+#         print("You win.")
+
+# Calculate area
+
+# You are painting a wall. The instructions on the paint can says that 1 can of paint can cover 5 square meters of wall. Given a random height and width of wall, calculate how many cans of paint you'll need to buy.
+
+# number of cans = (wall height ✖️ wall width) ÷ coverage per can.
+# import math
+
+# test_h = int(input("Height of wall: "))
+# test_w = int(input("Width of wall: "))
+# coverage = 5
+
+# def paint_calc(height, width, cover):
+#     print(f"You'll need {math.ceil((height * width) / cover)} cans of paint.")
+
+# paint_calc(height=test_h, width=test_w, cover=coverage)
+
+# Create a function called greet(). 
+# Write 3 print statements inside the function.
+# Call the greet() function and run your code.
+
+# def greet(location, name):
+#     print(f"hi {name}")
+#     print("i'm here")
+#     print(f"bye {location}")
+# greet(name="Jamie", location="Eden") 
+
+# Prime Number Checker
+
+# You need to write a function that checks whether if the number passed into it is a prime number or not.
+
+def prime_checker(number):
+    for i in range(2, number):
+        if number % i == 0:
+            print(f"{number} is not a prime number.")
+            break
+        elif number % 1 == 0 and number % number == 0:
+            print(f"{number} is a prime number.")
+            break
+
+
+
+    # for i in range(2, number):
+    #     if i % number == 0:
+    #         break
+    # for number in range(1, number + 1):
+    #     if number % 1 == 0 and number % number == 0:
+    #         print("It's a prime number.")
+    #     else:
+
+    #         print("It's not a prime number.")
+n = int(input("Check this number: "))
+prime_checker(number=n)
