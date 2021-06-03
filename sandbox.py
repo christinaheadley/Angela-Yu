@@ -211,25 +211,86 @@
 
 # You need to write a function that checks whether if the number passed into it is a prime number or not.
 
-def prime_checker(number):
-    for i in range(2, number):
-        if number % i == 0:
-            print(f"{number} is not a prime number.")
-            break
-        elif number % 1 == 0 and number % number == 0:
-            print(f"{number} is a prime number.")
-            break
+# def prime_checker(number):
+#     for i in range(2, number):
+#         if number % i == 0:
+#             print(f"{number} is not a prime number.")
+#             break
+#         elif number % 1 == 0 and number % number == 0:
+#             print(f"{number} is a prime number.")
+#             break
 
 
 
-    # for i in range(2, number):
-    #     if i % number == 0:
-    #         break
-    # for number in range(1, number + 1):
-    #     if number % 1 == 0 and number % number == 0:
-    #         print("It's a prime number.")
-    #     else:
+#     # for i in range(2, number):
+#     #     if i % number == 0:
+#     #         break
+#     # for number in range(1, number + 1):
+#     #     if number % 1 == 0 and number % number == 0:
+#     #         print("It's a prime number.")
+#     #     else:
 
-    #         print("It's not a prime number.")
-n = int(input("Check this number: "))
-prime_checker(number=n)
+#     #         print("It's not a prime number.")
+# n = int(input("Check this number: "))
+# prime_checker(number=n)
+
+#Dictionaries: Day 9 
+# student_scores = {
+#   "Harry": 81,
+#   "Ron": 78,
+#   "Hermione": 99, 
+#   "Draco": 74,
+#   "Neville": 62,
+# }
+
+# #TODO-1: Create an empty dictionary called student_grades.
+# student_grades = {}
+# for k in student_scores:
+#     if student_scores[k] > 90:
+#         student_grades[k] = "Outstanding"
+#     elif student_scores[k] > 80:
+#         student_grades[k] = "Exceeds Expectations"
+#     elif student_scores[k] > 70:
+#         student_grades[k] = "Acceptable"
+#     else:
+#         student_grades[k] = "Fail"
+
+# #TODO-2: Write your code below to add the grades to student_grades.
+
+# print(student_scores)
+# print(student_grades)
+
+travel_log = [
+{
+  "country": "France",
+  "visits": 12,
+  "cities": ["Paris", "Lille", "Dijon"]
+},
+{
+  "country": "Germany",
+  "visits": 5,
+  "cities": ["Berlin", "Hamburg", "Stuttgart"]
+},
+]
+#TODO: Write the function that will allow new countries
+#to be added to the travel_log. 
+def add_new_country(country, visits, cities):
+    travel_log.append({"country":country, "visits":visits, "cities":cities})
+
+add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+# print(travel_log)
+
+# AY answer:
+# def add_new_country(name, visit_count, cities_visited):
+#   new_country = {}
+#   new_country["country"] = name
+#   new_country["visits"] = visit_count
+#   new_country["cities"] = cities_visited
+#   travel_log.append(new_country)
+
+order = {
+    "starter": {1: "Salad", 2: "Soup"},
+    "main": {1: ["Burger", "Fries"], 2: ["Steak"]},
+    "dessert": {1: ["Ice Cream"], 2: []},
+}
+print(order["main"][2][0])
