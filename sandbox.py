@@ -293,4 +293,11 @@ order = {
     "main": {1: ["Burger", "Fries"], 2: ["Steak"]},
     "dessert": {1: ["Ice Cream"], 2: []},
 }
-print(order["main"][2][0])
+# print(order["main"][2][0])
+
+def format_name(f_name, l_name):
+    """Takes 2 params-- f_name and l_name-- and capitalizes each"""
+    return (f_name.capitalize() + " " + l_name.capitalize())
+print(format_name("aNgE", "yu"))
+    
+
