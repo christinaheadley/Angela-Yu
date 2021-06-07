@@ -1,5 +1,4 @@
 from art import higher_lower_logo, vs
-# import game_data print(game_data.data)
 from game_data import data
 from random import randint
 import os
