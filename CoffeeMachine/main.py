@@ -32,58 +32,114 @@ resources = {
 
 
 machine = "on"
-money = {"Money": 0}
-# water = {"Water": 300}
-# milk = {"Milk": 200}
-# coffee = {"Coffee": 100}
+
+starting_water = resources['water']
+starting_milk = resources['milk']
+starting_coffee = resources['coffee']
+
+espresso_used_water = MENU["espresso"]["ingredients"]["water"]
+espresso_used_coffee = MENU["espresso"]["ingredients"]["coffee"]
+
+latte_used_water = MENU["latte"]["ingredients"]["water"]
+latte_used_milk = MENU["latte"]["ingredients"]["milk"]
+latte_used_coffee = MENU["latte"]["ingredients"]["coffee"]
+
+cappuccino_used_water = MENU["cappuccino"]["ingredients"]["water"]
+cappuccino_used_milk = MENU["cappuccino"]["ingredients"]["milk"]
+cappuccino_used_coffee = MENU["cappuccino"]["ingredients"]["coffee"]
+
+used_water = 0
+used_milk = 0
+used_coffee = 0
+
+remaining_water = starting_water - used_water
+remaining_milk = starting_milk - used_milk
+remaining_coffee = starting_coffee - used_coffee
 
 while machine == "on":
     order = input("What would you like? (espresso/latte/cappuccino): ").lower()
-    # remaining_water = resources["water"] - MENU[order]["ingredients"]["water"]
-    # remaining_milk = resources["milk"] - MENU[order]["ingredients"]["milk"]
-    # remaining_coffee = resources["coffee"] - MENU[order]["ingredients"]["coffee"]
-    # print(remaining_water)
-    # print(MENU[order]["ingredients"]["water"])
-    # print(resources["water"])
-    # report = (
-    #     f"Water: {remaining_water}ml\n"
-    #     f"Milk: {remaining_milk}ml\n"
-    #     f"Coffee: {remaining_coffee}g"
-    #     )
-    if order == "off":
-        break
-    elif order == "report":
-        # print(remaining_water)
-        # for key, value in resources.items():
-        #     print(key, ' : ', value, 'ml')
-        continue
-    elif order != "espresso" and order != "latte" and order != "cappuccino":
-        print("Invalid request. Try again.")
-        continue
-    else:
-        def pay():
-            print("Please insert coins.")
-            quarters = float(input("How many quarters? ")) * .25
-            dimes = float(input("How many dimes? ")) * .10
-            nickels = float(input("How many nickels? ")) * .05
-            pennies = float(input("How many pennies? ")) * .01
-            return quarters + dimes + nickels + pennies
+    cost = float(MENU[order]["cost"])
 
-        # paid = "${:,.2f}".format
-        paid = float(pay())
-        cost = float(MENU[order]["cost"])
-        if paid >= cost:
+    report = (
+        f"Water: {remaining_water}ml\n"
+        f"Milk: {remaining_milk}ml\n"
+        f"Coffee: {remaining_coffee}g"
+        )
+
+    def pay():
+        print("Please insert coins.")
+        quarters = float(input("How many quarters? ")) * .25
+        dimes = float(input("How many dimes? ")) * .10
+        nickels = float(input("How many nickels? ")) * .05
+        pennies = float(input("How many pennies? ")) * .01
+        return quarters + dimes + nickels + pennies
+    paid = float(pay())
+
+    def issue_change():
+        if paid > cost:
             change = paid - cost
             print(f"Your change is ${change:.2f}.\nHere is your {order} ☕ Enjoy!")
         elif paid == cost:
             print(f"Here is your {order} ☕ Enjoy!")
         else:
             print("Sorry that's not enough money. Money refunded.")
+            exit()
+
+    if order == "report":
+        print(report)
+        # for key, value in resources.items():
+        #     print(key, ' : ', value, 'ml')
+        continue
+    elif order == "off":
+        break
+
+    elif order == "espresso":
+        while paid >= cost:
+            if remaining_water >= espresso_used_water:
+                if remaining_coffee >= espresso_used_coffee:
+                    # paid = float(pay())
+                    # issue_change()
+                    remaining_water -= espresso_used_water
+                    remaining_coffee -= espresso_used_coffee
+                    paid = float(pay())
+                    issue_change()
+                else:
+                    print("Not enough ingredients available for selection.")
+            else:
+                print("Not enough ingredients available for selection.")
+    elif order == "latte":
+        while paid >= cost:
+            if remaining_water >= latte_used_water:
+                if remaining_coffee >= latte_used_coffee:
+
+                    remaining_water -= latte_used_water
+                    remaining_milk -= latte_used_milk
+                    remaining_coffee -= latte_used_coffee
+                    paid = float(pay())
+                    issue_change()
+                else:
+                    print("Not enough ingredients available for selection.")
+            else:
+                print("Not enough ingredients available for selection.")
+    elif order == "cappuccino":
+        while paid >= cost:
+            if remaining_water >= cappuccino_used_water:
+                if remaining_coffee >= cappuccino_used_coffee:
+
+                    remaining_water -= cappuccino_used_water
+                    remaining_milk -= cappuccino_used_milk
+                    remaining_coffee -= cappuccino_used_coffee
+                    paid = float(pay())
+                    issue_change()
+                else:
+                    print("Not enough ingredients available for selection.")
+            else:
+                print("Not enough ingredients available for selection.")
+        else:
+            print("Invalid request. Try again.")
+            continue
 
 
-    # def issue_change():
-remaining_water = resources["water"] - order["water"]
-print(remaining_water)
 # TODO: 1. take customer order
 # TODO: 1. machine on/ off
 # TODO: 2. print report of resources
