@@ -375,14 +375,30 @@ def increase_enemies():
 #   print("Not leap year.")
   
 
-for number in range(1, 101):
-    if number % 3 == 0 and number % 5 == 0:
-        print("FizzBuzz")
-    elif number % 3 == 0:
-        print("Fizz")
-    elif number % 5 == 0:
-        print("Buzz")
-    else:
-        print(number)
-  
+# for number in range(1, 101):
+#     if number % 3 == 0 and number % 5 == 0:
+#         print("FizzBuzz")
+#     elif number % 3 == 0:
+#         print("Fizz")
+#     elif number % 5 == 0:
+#         print("Buzz")
+#     else:
+#         print(number)
+
+# from turtle import Turtle, Screen
+#
+# timmy = Turtle()
+# # print(timmy)
+# timmy.shape("arrow")
+# timmy.color("red")
+# tommy = Turtle()
+# tommy.color("purple")
+# tommy.shape("turtle")
+# print(tommy)
+# tommy.forward(100)
+#
+# my_screen = Screen()
+# print(my_screen.canvheight)
+# my_screen.exitonclick()
+
 
