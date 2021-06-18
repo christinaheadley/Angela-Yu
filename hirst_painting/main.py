@@ -24,24 +24,24 @@ while i < 100:
     i += 1
     if i % 10 == 0:
         turtle.setpos(-250.00, -250.00 + i*5)
-    else:
-        continue
-
-screen.exitonclick()
-
-AY solution:
-tim.setheading(225)
-tim.forward(300)
-tim.setheading(0)
-number_of_dots = 100
-
-for dot_count in range(1, number_of_dots + 1):
-    tim.dot(20, random.choice(color_list))
-    tim.forward(50)
-
-    if dot_count % 10 == 0:
-        tim.setheading(90)
-        tim.forward(50)
-        tim.setheading(180)
-        tim.forward(500)
-        tim.setheading(0)
+#     else:
+#         continue
+#
+# screen.exitonclick()
+#
+# AY solution:
+# tim.setheading(225)
+# tim.forward(300)
+# tim.setheading(0)
+# number_of_dots = 100
+#
+# for dot_count in range(1, number_of_dots + 1):
+#     tim.dot(20, random.choice(color_list))
+#     tim.forward(50)
+#
+#     if dot_count % 10 == 0:
+#         tim.setheading(90)
+#         tim.forward(50)
+#         tim.setheading(180)
+#         tim.forward(500)
+#         tim.setheading(0)
