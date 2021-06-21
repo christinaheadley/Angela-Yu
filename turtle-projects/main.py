@@ -129,34 +129,55 @@ screen.listen()
 # screen.onkeypress(key="c", fun=reset)
 
  # #####TURTLE RACING########
-screen.setup(width=500, height=400)
-race_is_on = False
-user_bet = screen.textinput(title="Make your bet", prompt="Which color will win? ")
-colors = ["red", "orange", "yellow", "green", "blue", "purple"]
-y_positions = [-70, -40, -10, 20, 50, 80]
-all_turtles = []
-for i in range(len(colors)):
-    turtle = Turtle(shape="turtle")
-    turtle.penup()
-    turtle.setpos(x=-230, y=y_positions[i])
-    turtle.color(colors[i])
-    all_turtles.append(turtle)
+# screen.setup(width=500, height=400)
+# race_is_on = False
+# user_bet = screen.textinput(title="Make your bet", prompt="Which color will win? ")
+# colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+# y_positions = [-70, -40, -10, 20, 50, 80]
+# all_turtles = []
+# for i in range(len(colors)):
+#     turtle = Turtle(shape="turtle")
+#     turtle.penup()
+#     turtle.setpos(x=-230, y=y_positions[i])
+#     turtle.color(colors[i])
+#     all_turtles.append(turtle)
+#
+# if user_bet:
+#     race_is_on = True
+#
+# while race_is_on:
+#     for turtle in all_turtles:
+#         random_distance = random.randint(0, 10)
+#         turtle.forward(random_distance)
+#     if turtle.xcor() > 230:
+#         # race_is_on = False
+#         if user_bet.lower == turtle.pencolor():
+#             print(f"You won! The winner is {turtle.pencolor()}!")
+#         else:
+#             print(f"You lost! The winner was {turtle.pencolor()}!")
+screen.onkey(key="e", fun=turtle.up)
+screen.onkey(turtle.down, "a")
+screen.onkey(turtle.left, "z")
+screen.onkey(turtle.right, "c")
 
-if user_bet:
-    race_is_on = True
-
-while race_is_on:
-    for turtle in all_turtles:
-        random_distance = random.randint(0, 10)
-        turtle.forward(random_distance)
-    if turtle.xcor() > 230:
-        # race_is_on = False
-        if user_bet.lower == turtle.pencolor():
-            print(f"You won! The winner is {turtle.pencolor()}!")
-        else:
-            print(f"You lost! The winner was {turtle.pencolor()}!")
+turtle.setheading(90)
+turtle.setheading(180)
 
 
+def up(self):
+    turtle.setheading(90)
+
+
+def down(self):
+    turtle.setheading(270)
+
+
+def left(self):
+    turtle.setheading(180)
+
+
+def right(self):
+    turtle.setheading(0)
 
 
 
