@@ -8,16 +8,16 @@ class Player(Turtle):
     def __init__(self):
         super().__init__()
         self.pu()
-        self.goto(0, -280)
+        self.goto(STARTING_POSITION)
         self.seth(90)
         self.color("black")
         self.shape("turtle")
         self.move_speed = "fastest"
 
     def move_up(self):
-        self.forward(20)
-        
-    def speed_up(self):
+        self.forward(MOVE_DISTANCE)
+
+
 
 
 # Create a turtle player that starts at the bottom of the screen and

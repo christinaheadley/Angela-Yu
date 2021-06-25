@@ -17,19 +17,20 @@ class CarManager(Turtle):
         self.shape("square")
         self.shapesize(1, 2, 0)
         self.setheading(-180)
-        # self.color("red")
         self.showturtle()
         self.color(random.choice(COLORS))
-        self.move_speed = 0.9
+        self.move_speed = STARTING_MOVE_DISTANCE
 
     def move_car(self):
         if self.xcor() > -300:
-            new_x = self.xcor() - 10
+            new_x = self.xcor() - MOVE_INCREMENT
             self.goto(new_x, self.ycor())
         else:
             new_x = 300
             self.goto(new_x, self.ycor())
 
+    def speed_up(self):
+        self.move_speed += MOVE_INCREMENT
 
 
 # class Ball(Turtle):
